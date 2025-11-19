@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form with Validation</title>
+  <script>
+    function validateForm() {
+      var name = document.forms["regForm"]["name"].value;
+      var email = document.forms["regForm"]["email"].value;
+      var password = document.forms["regForm"]["password"].value;
+      var confirmPassword = document.forms["regForm"]["confirmPassword"].value;
+      var phone = document.forms["regForm"]["phone"].value;
+
+      if (name == "") {
+        alert("Please enter your name");
+        return false;
+      }
+      var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long");
+        return false;
+      }
+      if (password != confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+      var phonePattern = /^[0-9]{10}$/;
+      if (!phone.match(phonePattern)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+      }
+      alert("Registration successful!");
+      return true;
+    }
+  </script>
+</head>
+<body style="font-family: Arial; background-color: #75d7f5;">
+
+    <h2 align="center">Registration Form</h2>
+
+    <form name="regForm" onsubmit="return validateForm()" 
+        style="width: 400px; margin: auto; background-color: rgb(13, 245, 102); padding: 20px; border-radius: 10px;">
+    
+    <label>Full Name:</label><br>
+    <input type="text" name="name" placeholder="Enter your full name" style="width:100%; padding:8px;"><br><br>
+
+    <label>Email:</label><br>
+    <input type="text" name="email" placeholder="Enter your email" style="width:100%; padding:8px;"><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" placeholder="Enter password" style="width:100%; padding:8px;"><br><br>
+
+    <label>Confirm Password:</label><br>
+    <input type="password" name="confirmPassword" placeholder="Confirm password" style="width:100%; padding:8px;"><br><br>
+
+    <label>Phone:</label><br>
+    <input type="text" name="phone" placeholder="Enter 10-digit phone number" style="width:100%; padding:8px;"><br><br>
+
+    <input type="submit" value="Register" 
+           style="width:100%; padding:10px; background-color:blue; color:white; border:none; border-radius:5px;">
+  </form>
+
+</body>
+</html>
+Create a HTML registration form and to validate the form using JavaScript code.
+Create a HTML page to change the background color for every click of a button using 
+JavaScript Event Handling.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <script>
+        function changeColor() {
+            // List of colors
+            var colors = ["red", "green", "blue", "yellow", "pink", "orange", "lightblue"];
+            
+            // Pick a random color
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+            // Apply the color to the background
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</head>
+<body>
+
+        <center>   
+            <h2>Click the button to change the background color</h2>
+            <button onclick="changeColor()">Change Color</button>
+        </center>    
+</body>
+</html>
